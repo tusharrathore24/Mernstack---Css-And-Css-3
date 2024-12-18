@@ -1,0 +1,33 @@
+#contactForm {
+    background-color: #8585858a;
+    padding: 35px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.form-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #525151;
+    border-radius: 5px;
+}
+
+#submitBtn {
+    background-color: #4c77af;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submitBtn:hover {
+    background-color: #3056a2;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}

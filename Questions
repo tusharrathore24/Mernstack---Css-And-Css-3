@@ -1,0 +1,335 @@
+Question 1: What is a CSS selector? Provide examples of element, class, and ID selectors.
+Ans 1: CSS selectors are patterns used to select and style HTML elements.
+
+Element Selector: Targets HTML elements based on their tag name.
+
+p {
+    color: blue;
+}
+Class Selector: Targets elements that have a specific class attribute. The class name is prefixed with a dot (.).
+
+.my-class {
+    font-size: 20px;
+}
+ID Selector: Targets an element that has a specific id attribute. The id name is prefixed with a hash symbol (#).
+
+#my-id {
+    background-color: yellow;
+}
+
+Question 2: Explain the concept of CSS specificity. How do conflicts between multiple
+stylesget resolved?
+
+Ans 2: CSS specificity is a set of rules that determines which styles are applied to an element when there are multiple conflicting CSS declarations. It's essentially a ranking system that assigns weight to different types of selectors, helping the browser decide which styles to apply.
+When there are conflicting CSS rules, the one with the higher specificity will be applied. If two selectors have the same specificity, the one that appears last in the CSS file takes precedence.
+
+Question 3: What is the difference between internal, external, and inline CSS? Discuss
+theadvantages and disadvantages of each approach.
+
+Ans 3: 
+1. Internal CSS
+
+Internal CSS is defined within the <style> tag inside the <head> section of the HTML document.
+its Advantages is--
+No Additional Files: No need for an external file, simplifying file management for small projects.
+
+2. External CSS
+External CSS is written in a separate file with a .css extension and linked to the HTML using the <link> tag.
+its Advantages is--
+Reusability: The same stylesheet can be linked to multiple pages, ensuring consistency across the site.
+Separation of Concerns: Keeps HTML clean and focused on content while CSS is reserved for styling.
+
+3. Inline CSS 
+Inline CSS is applied directly to individual HTML elements using the style attribute.
+its Advantages is--
+Quick and Specific: Useful for quick fixes or unique styles for a specific element.
+
+Question 4: Explain the CSS box model and its components (content, padding,
+border,margin). How does each affect the size of an element?
+
+Ans 4: The CSS box model is the foundational concept for understanding how HTML elements are displayed on a web page. Every element is considered as a rectangular box, and the box model governs the layout and spacing of these boxes.
+
+Content
+
+The content area is where text, images, or other elements are displayed.
+Its size is determined by properties like width and height.
+width: 200px;
+height: 100px;
+
+Padding
+
+The space between the content and the border of the element.
+Adds extra space inside the element, pushing the border outward.
+Can be set for each side (padding-top, padding-right, etc.) or as a shorthand (padding).
+padding: 10px;
+
+Border
+
+A visible (or invisible) line that wraps around the content and padding.
+Defined by properties like border-width, border-style, and border-color.
+border: 5px solid black;
+
+Margin
+
+The space outside the border, separating the element from neighboring elements.
+Can be set for each side (margin-top, margin-right, etc.) or as a shorthand (margin).
+margin: 20px;
+
+• Question 5: What is the difference between border-boxand content-boxbox-sizing inCSS?
+Which is the default?
+
+Ans 6: The box-sizing property in CSS determines how the browser calculates the total width and height of an element, including or excluding the padding and border.
+
+1. content-box (Default Box-Sizing)
+Definition: The width and height properties include only the content area. Padding, border, and margin are not included in the specified width and height.
+Any padding and border are added outside the specified dimensions, increasing the total size of the element.
+
+div {
+  box-sizing: content-box; /* Default */
+  width: 200px;
+  padding: 10px;
+  border: 5px solid black;
+}
+Total Width Calculation:
+
+Content Width = 200px
+Padding = 10px (left + right = 20px)
+Border = 5px (left + right = 10px)
+Total Width = 200 + 20 + 10 = 230px
+
+border-box
+Definition: The width and height properties include the content, padding, and border.
+The padding and border do not add to the total size; instead, they are deducted from the content area.
+
+div {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 10px;
+  border: 5px solid black;
+}
+
+Total Width Calculation:
+
+Total Width = 200px (includes padding and border)
+Padding = 10px (left + right = 20px)
+Border = 5px (left + right = 10px)
+Content Width = 200 - 20 - 10 = 170px
+
+Question 6: What is CSS Flexbox, and how is it useful for layout design? Explain the terms
+flex-container and flex-item
+Ans 6 : CSS Flexbox (Flexible Box Layout) is a layout model designed to help arrange items within a container in a way that is flexible, efficient, and responsive. It simplifies the process of aligning, distributing, and resizing elements, even when their sizes are dynamic or unknown. Flexbox is particularly useful for creating layouts that adapt to various screen sizes and devices
+
+
+CSS Flexbox: Overview
+CSS Flexbox (Flexible Box Layout) is a layout model designed to help arrange items within a container in a way that is flexible, efficient, and responsive. It simplifies the process of aligning, distributing, and resizing elements, even when their sizes are dynamic or unknown. Flexbox is particularly useful for creating layouts that adapt to various screen sizes and devices.
+
+Key Features of Flexbox
+- Align items horizontally and vertically without additional CSS hacks.
+- Distribute space between items dynamically, even if their dimensions differ.
+- Easily rearrange and control the order of elements.
+- Offers responsive design capabilities.
+
+• Question 7: Describe the properties justify-content, align-items, and flex-direction
+used in Flexbox.
+Ans 7: Flexbox Properties: justify-content, align-items, and flex-direction
+These properties are essential for controlling the layout and alignment of items in a Flexbox container. Each plays a specific role in determining the arrangement and alignment of child elements (flex items).
+
+1. flex-direction
+Definition: Determines the direction in which flex items are placed within the flex container.
+
+Possible Values:
+
+row (default): Items are placed in a row, from left to right.
+row-reverse: Items are placed in a row, but in reverse order (right to left).
+column: Items are placed in a column, from top to bottom.
+column-reverse: Items are placed in a column, but in reverse order (bottom to top).
+
+2. justify-content
+Definition: Aligns flex items along the main axis (determined by flex-direction), controlling the horizontal or vertical spacing between them.
+
+Possible Values:
+
+flex-start (default): Items align to the start of the main axis.
+flex-end: Items align to the end of the main axis.
+center: Items are centered along the main axis.
+space-between: Items are distributed with space between them.
+space-around: Items are distributed with equal space around them.
+space-evenly: Items are distributed with equal space between and around them.
+
+3. align-items
+Definition: Aligns flex items along the cross axis (perpendicular to the main axis), controlling their vertical or horizontal positioning.
+
+Possible Values:
+
+stretch (default): Items stretch to fill the container along the cross axis.
+flex-start: Items align to the start of the cross axis.
+flex-end: Items align to the end of the cross axis.
+center: Items are centered along the cross axis.
+baseline: Items align based on their text baseline.
+
+• Question 8: What are media queries in CSS, and why are they important for
+responsivedesign?
+
+Ans 8: Media queries are a CSS technique used to apply styles conditionally based on the characteristics of the device or viewport, such as its width, height, orientation, or resolution. They are a cornerstone of responsive design, enabling websites to adapt dynamically to different devices and screen sizes.
+Media queries use logical expressions to test for certain conditions. If the conditions are met, the styles inside the media query are applied.
+
+Example:
+
+css
+Copy code
+/* Apply styles for devices with a maximum width of 768px */
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+Question 9: Write a basic media query that adjusts the font size of a webpage for
+screenssmaller than 600px
+
+Ans 9 : 
+body {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+- The default font size (16px) is applied to all devices by default.
+- The @media (max-width: 600px) query targets screens with a width up to 600px.
+- For these smaller screens, the font size is reduced to 14px to improve readability and better fit the available space.
+
+• Question 10: Explain the difference between web-safe fonts and custom web fonts.
+Whymight you use a web-safe font over a custom font?
+
+Ans 10 : 1. Web-Safe Fonts
+Definition: Web-safe fonts are a set of fonts that are pre-installed on most operating systems and devices. Because they are universally available, they display consistently across different platforms without needing to be downloaded by the browser.
+
+Examples:
+
+Arial
+Times New Roman
+Verdana
+Courier New
+Georgia
+
+
+Difference Between Web-Safe Fonts and Custom Web Fonts
+1. Web-Safe Fonts
+Definition: Web-safe fonts are a set of fonts that are pre-installed on most operating systems and devices. Because they are universally available, they display consistently across different platforms without needing to be downloaded by the browser.
+
+Examples:
+
+Arial
+Times New Roman
+Verdana
+Courier New
+Georgia
+Advantages:
+
+Guaranteed compatibility: They render consistently across browsers and devices.
+No additional loading time: No need to download the font, which improves website performance.
+Disadvantages:
+
+Limited design choices: Designers are restricted to a small set of fonts.
+Less uniqueness: Websites using web-safe fonts may look less distinctive.
+2. Custom Web Fonts
+Definition: Custom web fonts are fonts that are not pre-installed on devices but are loaded from external sources, such as a web server or font-hosting service (e.g., Google Fonts or Adobe Fonts).
+
+Examples:
+
+Roboto (Google Fonts)
+Open Sans
+Lato
+Poppins
+Custom proprietary fonts
+
+
+Difference Between Web-Safe Fonts and Custom Web Fonts
+1. Web-Safe Fonts
+Definition: Web-safe fonts are a set of fonts that are pre-installed on most operating systems and devices. Because they are universally available, they display consistently across different platforms without needing to be downloaded by the browser.
+
+Examples:
+
+Arial
+Times New Roman
+Verdana
+Courier New
+Georgia
+Advantages:
+
+Guaranteed compatibility: They render consistently across browsers and devices.
+No additional loading time: No need to download the font, which improves website performance.
+Disadvantages:
+
+Limited design choices: Designers are restricted to a small set of fonts.
+Less uniqueness: Websites using web-safe fonts may look less distinctive.
+2. Custom Web Fonts
+Definition: Custom web fonts are fonts that are not pre-installed on devices but are loaded from external sources, such as a web server or font-hosting service (e.g., Google Fonts or Adobe Fonts).
+
+Examples:
+
+Roboto (Google Fonts)
+Open Sans
+Lato
+Poppins
+Custom proprietary fonts
+
+Why Use a Web-Safe Font Over a Custom Font?
+Performance:
+
+Web-safe fonts do not require downloading, so they load faster, making them suitable for performance-critical applications or users with slow internet connections.
+Consistency:
+
+Web-safe fonts render uniformly across all devices and browsers, ensuring a predictable user experience.
+Fallback Option:
+
+If a custom font fails to load due to network issues or browser incompatibility, a web-safe font can serve as a reliable fallback.
+Lightweight Designs:
+
+For simple, text-heavy pages where unique typography isn’t crucial, web-safe fonts are a practical choice
+
+• Question 11: What is the font-familyproperty in CSS? How do you apply a custom Google
+Font to a webpage?
+
+Ans 11 : The font-family property in CSS specifies the typeface (font) to be used for text on a webpage. It allows developers to define a prioritized list of fonts to be applied. If the first font is unavailable, the browser will use the next one in the list.
+
+- font-family: "FontName", fallbackFont, genericFontFamily;
+FontName: The primary font to use (can be a custom or web-safe font).
+FallbackFont: A secondary font in case the primary font is unavailable.
+GenericFontFamily: A generic font classification (e.g., sans-serif, serif, monospace) as the ultimate fallback.
+
+Step 1: Choose a Font from Google Fonts
+Visit Google Fonts.
+Select a font you like (e.g., Roboto).
+Click the font and copy the embed link provided.
+
+Add the <link> tag for the font in the <head> of your HTML file:
+
+Use the font-family property in your CSS to apply the font to elements:
+
+• Question 12: Difference b/w HTML & HTML5?
+
+Ans 12 : HTML and HTML5 are both markup languages used to create and structure web pages. HTML5 is the latest version of HTML and introduces significant enhancements and new features to address the limitations of previous versions.
+
+Notable Features of HTML5
+1. Semantic Tags:
+
+Tags like <nav>, <main>, and <aside> provide better document structure and improve SEO.
+2. Native Multimedia Support:
+
+Play audio and video directly in the browser using <audio> and <video> tags.
+3. Graphics:
+
+The <canvas> element allows developers to draw and manipulate graphics via JavaScript.
+4. Enhanced Forms:
+
+New attributes like placeholder, autofocus, and required improve user experience.
+5. Cross-Platform Support:
+
+Designed for compatibility across devices, especially mobile devices.
+6. Web Storage:
+
+Offers localStorage and sessionStorage for storing data in the browser without relying on cookies.
